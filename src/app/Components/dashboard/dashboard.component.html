@@ -1,0 +1,53 @@
+<div class="Dashboard">
+    <div class="search" style="height: 70px;">
+            <button class="button" mat-icon-button style="color:black" (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <button mat-icon-button style="margin-left: 10px;">
+                <img src="assets/FundooKeep.png" alt="Image" style="width: 30px; height: 30px; margin-right: 10px;">
+                <span style="color: grey; font-size: x-large; font-family: 'Times New Roman', Times, serif;">Keep</span>
+            </button>
+            <mat-form-field class="form" appearance="outline" style="width: 700px; background: transparent;">
+                <!-- <button mat-icon-button>
+                    <img src="assets/search.png" alt="Image" style="width: 30px; height: 30px; margin-right: 10px;">
+                </button> -->
+                <mat-label>Search</mat-label>
+                <input matInput style="height: 20px;" placeholder="Search">
+            </mat-form-field>
+            <img style="margin-left: 10px;" src="assets/refresh.png" >
+            <img style="margin-left: 10px;" src="assets/grid_view.png" >
+            <img style="margin-left: 10px;" src="assets/settings.png" >
+            <img style="margin-left: 10px;" src="assets/apps.png" >
+    </div>
+    <div>
+        <mat-sidenav-container>
+            <mat-sidenav #sidenav  mode="side">
+                <mat-nav-list>
+                    <mat-list-item>
+                        <img src="assets/lightbulb.png">
+                        <span> Notes</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <img src="assets/notifications.png">
+                        <span> Notifications</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <img src="assets/edit.png">
+                        <span> Edit</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <img src="assets/archive.png">
+                        <span> Archive</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <img src="assets/delete.png">
+                        <span> Delete</span>
+                    </mat-list-item>
+                </mat-nav-list>
+            </mat-sidenav>
+            <mat-sidenav-content class="sidenav">
+                <router-outlet></router-outlet>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div>
+</div>

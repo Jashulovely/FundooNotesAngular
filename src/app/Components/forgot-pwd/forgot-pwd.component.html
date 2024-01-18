@@ -1,0 +1,27 @@
+<div class="Form">
+    <div class="form-container">
+        <h1 style="text-align: center;">
+            <span style="color: #0f0e0e;">Find your Password</span></h1>
+        <h3 style="text-align: center;">
+            <span style="color: black;">Enter your phone number or email</span></h3>
+        
+        <form [formGroup]="forgotpwdForm" (ngSubmit)="onForgotpwd()">
+            <p style="margin-top: 30px;">
+                <mat-form-field appearance="outline" style="width: 300px">
+                <mat-label>Email or Phone</mat-label>
+                <input matInput placeholder="Email or Phone" formControlName="EmailId">
+                <mat-error *ngIf="forgotpwdForm.get('EmailId')?.hasError('required')">
+                    email is required
+                  </mat-error>
+                  <mat-error *ngIf="forgotpwdForm.get('EmailId')?.hasError('email')">
+                    email is invalid
+                  </mat-error>
+                </mat-form-field>
+            </p>
+            <div>
+                <button mat-button (click)="RedirectToLogin()" style="color: blue;">Sign in instead</button>
+                <button mat-raised-button color="primary" style="margin-left: 110px;">Next</button>
+            </div>  
+        </form>  
+    </div>
+</div>

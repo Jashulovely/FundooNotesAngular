@@ -1,0 +1,59 @@
+<div class="Form">
+  <div class="form-container">
+      <h1 style="text-align: center;">
+          <span style="color: blue">F</span>
+          <span style="color: brown">u</span>
+          <span style="color: gray">n</span>
+          <span style="color: rgb(219, 171, 47)">d</span>
+          <span style="color: green">o</span>
+          <span style="color: brown">o</span>
+          <span style="color: blue"> N</span>
+          <span style="color: yellowgreen">o</span>
+          <span style="color: gray">t</span>
+          <span style="color: green">e</span>
+          <span style="color: goldenrod">s</span>
+      </h1>
+      <h1 style="text-align: center;">
+          <span style="color: black">Sign in</span></h1>
+      <h3 style="text-align: center;">
+        <span style="color: black">Use your Email Account</span></h3>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div style="margin-left: 23px;">
+            <mat-form-field appearance="outline" style="width: 300px; margin: 0px;">
+              <mat-label>Email or Phone</mat-label>
+              <input matInput placeholder="Email or Phone" formControlName="email">
+              
+              <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+                email is required
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+                email is invalid
+              </mat-error>
+              
+            </mat-form-field>
+        </div>
+        <p style="margin-left: 23px;">
+          <mat-form-field appearance="outline" style="width: 300px">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" formControlName="password">
+            
+            <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+              password is required
+            </mat-error>
+            <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">
+              password is short
+            </mat-error>
+            <mat-error *ngIf="!loginForm.get('password')?.hasError('required') && !loginForm.get('password')?.hasError('minlength')">
+              password is weak
+            </mat-error>
+          
+          </mat-form-field>
+          <button (click)="RedirectToForgotPwd()" mat-button color="primary">Forgot password?</button>
+        </p>
+        <br>
+        <button mat-button (click)="RedirectToRegister()" style="background-color: white;color: blue; margin-left: 20px;">Register</button>
+        <button mat-raised-button [disabled]="loginForm.invalid" style="background-color: cornflowerblue;color:white; margin-left: 143px;">Sign in</button>
+      </form>
+  </div>
+</div>

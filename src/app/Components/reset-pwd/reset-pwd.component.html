@@ -1,0 +1,44 @@
+<div class="Form">
+    <div class="form-container">
+        <h1 style="text-align: center;">
+            <span style="color: #0f0e0e;">Reset your Password</span></h1>
+        <h3 style="text-align: center;">
+            <span style="color: black;">Enter your password to reset</span></h3>
+            
+        <form [formGroup]="resetpwdForm" (ngSubmit)="onResetpwd()">
+            <p>
+                <mat-form-field appearance="outline" style="width: 300px">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" formControlName="password">
+
+                <mat-error *ngIf="resetpwdForm.get('password')?.hasError('required')">
+                    password is required
+                  </mat-error>
+                  <mat-error *ngIf="resetpwdForm.get('password')?.hasError('minlength')">
+                    password is short
+                  </mat-error>
+                  <mat-error *ngIf="!resetpwdForm.get('password')?.hasError('required') && !resetpwdForm.get('password')?.hasError('minlength')">
+                    password is invalid
+                  </mat-error>
+
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline" style="width: 300px">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput placeholder="Confirm Password" formControlName="confirmpassword">
+                <mat-error *ngIf="resetpwdForm.get('confirmpassword')?.hasError('required')">
+                    confirm password is required
+                  </mat-error>
+                  <mat-error *ngIf="resetpwdForm.get('confirmpassword')?.hasError('minlength')">
+                    password is short
+                  </mat-error>
+                  <mat-error *ngIf="!resetpwdForm.get('confirmpassword')?.hasError('required') && !resetpwdForm.get('confirmpassword')?.hasError('minlength')">
+                    password is weak
+                  </mat-error>
+                </mat-form-field>
+            </p>
+            <button mat-raised-button style="background-color: cornflowerblue;color:white; margin-left: 220px;">Submit</button>
+        </form>
+    </div>
+ </div>

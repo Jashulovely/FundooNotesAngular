@@ -1,0 +1,47 @@
+<br>
+
+<body class="body">
+    <mat-card>
+        <mat-card-content style="width: 600px;">
+            <div *ngIf="isValid;then Create_Notes else Take_Notes"></div>
+                
+            <ng-template #Create_Notes >   
+                    <div class="CreateNotes" style="height: 20px;">
+                            <input class="Create" placeholder="Take a note..."  (click)="isValid= !isValid">
+                            <button mat-button style="margin-left: 200px;"><img src="assets/check_box.png"></button>
+                            <button mat-button><img src="assets/brush.png"></button>
+                            <button mat-button><img src="assets/image.png"></button>
+                    </div>
+            </ng-template> 
+            <ng-template #Take_Notes> 
+                <form [formGroup]="notesForm" (ngSubmit)="onCreateNote()">
+                <div class="TakeNotes">
+                    <div>
+                            <input class="Title" placeholder="Title" formControlName="title">
+                            <button mat-button style="margin-left: 100px;"><img src="assets/push_pin.png"></button>
+                    </div>
+                    <div>
+                            <input class="Take" placeholder="Take a note..." formControlName="note"><br><br>
+                            <div>
+                                <app-icons></app-icons>
+                                <button mat-button style="margin-left: 130px;" type="submit">Close</button>
+                            </div><br>
+                    </div>
+                </div>
+            </form>
+            </ng-template>
+        </mat-card-content>
+    </mat-card>
+</body>
+
+
+
+
+
+
+
+
+<!--   
+    porsu.jaswanthkumar@gmail.com
+    Jaswanth@123
+-->

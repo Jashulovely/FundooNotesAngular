@@ -1,0 +1,12 @@
+<br>
+<div *ngFor="let notes of notesList" class="card">
+    <mat-card class="notesContainer" [style.background]="notes.color">
+        <mat-card-title mat-input class="title" (click)="editNoteDialogBox(notes)">{{notes.title}}</mat-card-title>
+        <mat-card-content>
+            <div (click)="editNoteDialogBox(notes)">{{notes.note}}</div><br>
+            <div>
+                <app-icons [notesData]="notes"></app-icons>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,29 @@
+<button mat-button matTooltip="Remind me" *ngIf="!isTrash"><img src="assets/add_alert.png"></button>
+<button mat-button matTooltip="Archive" *ngIf="!isArchieve && !isTrash" (click)="onArchive()"><img src="assets/archive.png"></button>
+<button mat-button matTooltip="Unarchive" *ngIf="isArchieve && !isTrash" (click)="onArchive()"><img src="assets/unarchive.png"></button>
+<button mat-button matTooltip="Collaborator" *ngIf="!isTrash"><img src="assets/person_add.png"></button>
+<button mat-button matTooltip="Backgroung options" [matMenuTriggerFor]="paletteMenu" *ngIf="!isTrash"><img src="assets/palette.png"></button>
+<mat-menu #paletteMenu="matMenu" [yPosition]="'below'">
+      <div class="horizontal-menu">
+        <div *ngFor="let colors of colorArray">
+          <button mat-icon-button [style.background]="colors.code" (click)="selectColor(colors)"></button>
+        </div>
+      </div>
+</mat-menu>
+<button mat-button matTooltip="Add image" *ngIf="!isTrash"><img src="assets/image.png"></button>
+<button mat-button matTooltip="Delete forever" *ngIf="isTrash"><img src="assets/delete.png"></button>
+<button mat-button matTooltip="Restore" *ngIf="isTrash"><img src="assets/restore.png"></button>
+<button mat-button matTooltip="More" [matMenuTriggerFor]="moreMenu" *ngIf="!isTrash"><img src="assets/more_vert.png"></button>
+<mat-menu #moreMenu="matMenu" [xPosition]="'after'">
+    <button mat-menu-item (click)="onDelete()">Delete Note</button>
+    <button mat-menu-item>Change labels</button>
+    <button mat-menu-item>Add drawing</button>
+    <button mat-menu-item>Make a copy</button>
+    <button mat-menu-item>Show checkboxes</button>
+    <button mat-menu-item>Copy to Google Docs</button>
+    <button mat-menu-item>Version history</button>
+</mat-menu>
+
+
+
+                            

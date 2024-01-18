@@ -1,0 +1,35 @@
+.CreateNotes{
+    display: inline-block;
+}
+.TakeNotes{
+    display: inline-block;
+}
+
+.body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Create{
+    border: 0px;
+    outline: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+
+.Take{
+    border: 0px;
+    outline: none;
+    width: 400px;
+    font-size: large;
+    margin-left: 5px;
+}
+
+.Title{
+    border: 0px;
+    outline: none;
+    width: 400px;
+    font-size: large;
+    margin-left: 5px;
+}

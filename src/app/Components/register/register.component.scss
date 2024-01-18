@@ -1,0 +1,27 @@
+.Form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+.form-container {
+width: 450px; 
+height: 470px;
+padding: 30px;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a box shadow for a subtle effect */
+}
+
+.example-section {
+    margin: 12px 0;
+  }
+  
+  .gmail{
+    position: relative;
+    display: block;
+    top: 14px;
+    left: 300px;
+    font-family: roboto;
+}
